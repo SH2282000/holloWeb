@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>My first three.js app</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="dropdown.css">
+</head>
+
+<body>
+	<div class="menu">
+		<div class="dropdown">
+			<button class="dropdown-btn" aria-label="menu button" aria-haspopup="menu" aria-expanded="false"
+				aria-controls="dropdown-menu">
+				<span>Objets</span>
+				<span class="arrow"></span>
+			</button>
+			<ul class="dropdown-content" role="menu" id="dropdown-menu">
+				<li style="--delay: 1;"><a id="button0">Montres</a></li>
+				<li style="--delay: 2;"><a id="button1">Lunettes</a></li>
+				<li style="--delay: 3;"><a id="button2">Sculptures</a></li>
+				<li style="--delay: 4;"><a id="button3">Autre...</a></li>
+			</ul>
+		</div>
+	</div>
+	<script type="module" src="/main.js"></script>
+</body>
+
+</html>

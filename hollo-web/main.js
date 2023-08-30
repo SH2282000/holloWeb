@@ -10,19 +10,18 @@ animate();
 
 function init() {
     document.addEventListener('contextmenu', event => event.preventDefault());
+    window.addEventListener('resize', onWindowResize)
+
     dropdown()
 
     scene = new THREE.Scene();
     scene.background = new THREE.Color( 0xffffff );
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-    renderer = new THREE.WebGLRenderer({
-        antialias: true, // Enable antialiasing
-        pixelRatio: window.pixelRatio, // Set pixel ratio to match device's pixel density
-    });
-    // renderer.setPixelRatio(window.pixelRatio)
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);
     const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
@@ -63,4 +62,10 @@ function animate() {
 function onButtonClick(index){
     console.log(`Button ${index + 1} clicked!`);
     cube.material.color.set( Math.random() * 0xffffff );
+}
+
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
 }

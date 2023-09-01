@@ -68,18 +68,14 @@
     transition-delay: calc(60ms * var(--delay));
 }
 
-.dropdown-content.menu-open .dropdown-btn, .sub-dropdown-content li {
+.dropdown-content.menu-open .dropdown-btn, .sub-dropdown-content.menu-open li  {
+    margin-bottom: 10%;
     background: var(--cod-gray-500);
     right: 0;
 }
 
 .dropdown-content.menu-open {
     visibility: visible;
-}
-
-.sub-dropdown-content.menu-open .dropdown-btn, .sub-dropdown-content.menu-open li {
-    background: var(--cod-gray-500);
-    right: 0;
 }
 
 .sub-dropdown-content.menu-open {

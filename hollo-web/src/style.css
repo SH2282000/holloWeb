@@ -13,17 +13,17 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --violet-50: #f5f3ff;
-  --violet-100: #ede9fe;
-  --violet-200: #ddd6fe;
-  --violet-300: #c4b5fd;
-  --violet-400: #a78bfa;
-  --violet-500: #8b5cf6;
-  --violet-600: #7c3aed;
-  --violet-700: #6d28d9;
-  --violet-800: #5b21b6;
-  --violet-900: #4c1d95;
-  --violet-950: #2e1065;
+  --cod-gray-50: #f6f6f6;
+  --cod-gray-100: #e7e7e7;
+  --cod-gray-200: #d1d1d1;
+  --cod-gray-300: #b0b0b0;
+  --cod-gray-400: #888888;
+  --cod-gray-500: #6d6d6d;
+  --cod-gray-600: #5d5d5d;
+  --cod-gray-700: #4f4f4f;
+  --cod-gray-800: #454545;
+  --cod-gray-900: #3d3d3d;
+  --cod-gray-950: #121212;
 }
 
 a {
@@ -86,28 +86,6 @@ h1 {
   display: flex;
   flex-direction: row;
 }
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 
 @media (prefers-color-scheme: light) {
   :root {

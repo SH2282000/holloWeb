@@ -72,7 +72,9 @@ function onWindowResize() {
 }
 
 function loadMenu() {
-    dropdown()
+    for (const x of Array(3).keys()) {
+        dropdown(x)
+    }
     const buttons = document.querySelectorAll('#button0, #button1, #button2, #button3');
     buttons.forEach((button, index) => {
         button.addEventListener('click', function() {

@@ -1,4 +1,4 @@
-export function dropdown(idButton) {
+export function dropdown(idButton, numOfButtons) {
   const dropdownBtn = document.getElementById(`dropdown-btn${idButton}`);
   const dropdownCaret = document.getElementById(`arrow${idButton}`);
   const dropdownContent = document.getElementById(`dropdown-content${idButton}`);
@@ -7,7 +7,7 @@ export function dropdown(idButton) {
   dropdownBtn.addEventListener("click", () => {
     dropdownCaret.classList.toggle("arrow-rotate");
     if (idButton == 0) {
-      for (const x of Array(2).keys()) {
+      for (const x of Array(numOfButtons - 1).keys()) {
         closeEverything(x + 1)
       }
     } else {

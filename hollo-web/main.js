@@ -82,11 +82,6 @@ function animate() {
 	renderer.render( scene, camera );
 }
 
-function onButtonClick(index){
-    console.log(`Button ${index + 1} clicked!`);
-    cube.material.color.set( Math.random() * 0xffffff );
-}
-
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
@@ -94,13 +89,8 @@ function onWindowResize() {
 }
 
 function loadMenu() {
-    for (const x of Array(3).keys()) {
-        dropdown(x)
+    const numOfButtons = 8
+    for (const x of Array(numOfButtons).keys()) {
+        dropdown(x, numOfButtons)
     }
-    const buttons = document.querySelectorAll('#button0, #button1, #button2, #button3');
-    buttons.forEach((button, index) => {
-        button.addEventListener('click', function() {
-            onButtonClick(index)
-        }, false)
-    });
 }

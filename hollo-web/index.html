@@ -8,7 +8,9 @@
 	<link rel="stylesheet" href="src/dropdown.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Jost:wght@100;200;600&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Jost:wght@100;200;600&family=Roboto:wght@100;300;400&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
@@ -21,38 +23,107 @@
 	</div>
 	<div id="view1" class="view">
 		<img class="logo" src="logo_black.png">
+		<video id="video" autoplay loop muted>
+			<source src="video/bague0.mp4" type="video/mp4" />
+		</video>
 		<div class="dropdown">
 			<button class="dropdown-btn" id="dropdown-btn0" aria-label="menu button" aria-haspopup="menu"
 				aria-expanded="false" aria-controls="dropdown-menu">
-				<span>Objets</span>
+				<span>Objets 3D</span>
 				<span class="arrow" id="arrow0"></span>
 			</button>
 			<ul class="dropdown-content" id="dropdown-content0" role="menu" id="dropdown-menu">
 				<li style="--delay: 1;">
 					<button class="dropdown-btn" id="dropdown-btn1" aria-label="menu button" aria-haspopup="menu"
 						aria-expanded="false" aria-controls="dropdown-menu">
-						<span>Sous-Objets</span>
+						<span>Vehicules</span>
 						<span class="arrow" id="arrow1"></span>
 					</button>
 					<ul class="sub-dropdown-content" id="dropdown-content1">
-						<li style="--delay: 1;"><a>Modèle 1</a></li>
-						<li style="--delay: 2;"><a>Modèle 2</a></li>
+						<li style="--delay: 1;"><a>Moteurs</a></li>
+						<li style="--delay: 2;"><a>Jantes</a></li>
+						<li style="--delay: 3;"><a>Interieurs</a></li>
+						<li style="--delay: 4;"><a>Tableaux de bord</a></li>
 					</ul>
 				</li>
 				<li style="--delay: 2;">
 					<button class="dropdown-btn" id="dropdown-btn2" aria-label="menu button" aria-haspopup="menu"
 						aria-expanded="false" aria-controls="dropdown-menu">
-						<span>Sous-Objets</span>
+						<span>Bagues</span>
 						<span class="arrow" id="arrow2"></span>
 					</button>
 					<ul class="sub-dropdown-content" id="dropdown-content2">
-						<li style="--delay: 1;"><a>Modèle 1</a></li>
-						<li style="--delay: 2;"><a>Modèle 2</a></li>
+						<li style="--delay: 1;"><a>Bague diamant</a></li>
+						<li style="--delay: 2;"><a>Autres Bagues</a></li>
+					</ul>
+				</li>
+				<li style="--delay: 3;">
+					<button class="dropdown-btn" id="dropdown-btn3" aria-label="menu button" aria-haspopup="menu"
+						aria-expanded="false" aria-controls="dropdown-menu">
+						<span>Logos</span>
+						<span class="arrow" id="arrow3"></span>
+					</button>
+					<ul class="sub-dropdown-content" id="dropdown-content3">
+						<li style="--delay: 1;"><a>Nike</a></li>
+						<li style="--delay: 2;"><a>Sac</a></li>
+						<li style="--delay: 3;"><a>McDo</a></li>
+						<li style="--delay: 4;"><a>Coca-Cola</a></li>
+					</ul>
+				</li>
+				<li style="--delay: 4;">
+					<button class="dropdown-btn" id="dropdown-btn4" aria-label="menu button" aria-haspopup="menu"
+						aria-expanded="false" aria-controls="dropdown-menu">
+						<span>Chaussures</span>
+						<span class="arrow" id="arrow4"></span>
+					</button>
+					<ul class="sub-dropdown-content" id="dropdown-content4">
+						<li style="--delay: 1;"><a>Chaussures 0</a></li>
+						<li style="--delay: 2;"><a>Chaussures 1</a></li>
+						<li style="--delay: 3;"><a>Chaussures 2</a></li>
+						<li style="--delay: 4;"><a>Chaussures 3</a></li>
+						<li style="--delay: 5;"><a>Chaussures 4</a></li>
+						<li style="--delay: 6;"><a>Chaussures 5</a></li>
+						<li style="--delay: 7;"><a>Chaussures 6</a></li>
+					</ul>
+				</li>
+				<li style="--delay: 5;">
+					<button class="dropdown-btn" id="dropdown-btn5" aria-label="menu button" aria-haspopup="menu"
+						aria-expanded="false" aria-controls="dropdown-menu">
+						<span>Futuriste</span>
+						<span class="arrow" id="arrow5"></span>
+					</button>
+					<ul class="sub-dropdown-content" id="dropdown-content5">
+						<li style="--delay: 1;"><a>Iron-Man</a></li>
+						<li style="--delay: 2;"><a>Deep Fake</a></li>
+					</ul>
+				</li>
+				<li style="--delay: 6;">
+					<button class="dropdown-btn" id="dropdown-btn6" aria-label="menu button" aria-haspopup="menu"
+						aria-expanded="false" aria-controls="dropdown-menu">
+						<span>Accessoires</span>
+						<span class="arrow" id="arrow6"></span>
+					</button>
+					<ul class="sub-dropdown-content" id="dropdown-content6">
+						<li style="--delay: 1;"><a>Lunettes</a></li>
+						<li style="--delay: 2;"><a>Montre 1</a></li>
+						<li style="--delay: 3;"><a>Montre 2</a></li>
+					</ul>
+				</li>
+				<li style="--delay: 7;">
+					<button class="dropdown-btn" id="dropdown-btn7" aria-label="menu button" aria-haspopup="menu"
+						aria-expanded="false" aria-controls="dropdown-menu">
+						<span>Immobilier</span>
+						<span class="arrow" id="arrow7"></span>
+					</button>
+					<ul class="sub-dropdown-content" id="dropdown-content7">
+						<li style="--delay: 1;"><a>Architecture</a></li>
+						<li style="--delay: 2;"><a>Robinet</a></li>
 					</ul>
 				</li>
 			</ul>
 		</div>
 	</div>
+
 	<script type="module" src="main.js"></script>
 </body>
 

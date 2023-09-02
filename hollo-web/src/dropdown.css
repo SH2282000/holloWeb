@@ -14,16 +14,16 @@
 
 /* Dropdown styles */
 .menu-dropdown {
-    top: 0;
     display: flex;
     flex-direction: column;
     max-width: 13em;
     margin: 80px auto 0;
-    position:fixed;
+    position:absolute;
     width: 100%;
 }
 
 .dropdown {
+    top: 10%;
     max-width: 13em;
     margin: 80px auto 0;
     position:fixed;
@@ -31,7 +31,7 @@
 }
 
 .dropdown-btn {
-    background: var(--cod-gray-800);
+    background: var(--cod-gray-400);
     color: var(--cod-gray-50);
     font-size: 18px;
     width: 100%;
@@ -53,10 +53,13 @@
 
 .dropdown-content, .sub-dropdown-content {
     list-style: none;
-    top: 4em;
     width: 100%;
+    position: absolute;
     visibility: hidden;
-    overflow: hidden;
+}
+
+.sub-dropdown-content {
+    top: 0;
 }
 
 .dropdown-content .dropdown-btn, .sub-dropdown-content li {
@@ -69,16 +72,12 @@
 }
 
 .dropdown-content.menu-open .dropdown-btn, .sub-dropdown-content.menu-open li  {
-    margin-bottom: 10%;
+    margin: 5% 0;
     background: var(--cod-gray-500);
     right: 0;
 }
 
-.dropdown-content.menu-open {
-    visibility: visible;
-}
-
-.sub-dropdown-content.menu-open {
+.dropdown-content.menu-open, .sub-dropdown-content.menu-open  {
     visibility: visible;
 }
 
@@ -90,7 +89,7 @@
     background: #1d1f24;
 }
 
-.dropdown-content .dropdown-btn button {
+.dropdown-content .dropdown-btn button, .sub-dropdown-content li a {
     padding: 0.8em 1em;
     color: #fff;
     margin: 0.5em 0;

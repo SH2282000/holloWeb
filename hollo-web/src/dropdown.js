@@ -10,6 +10,8 @@ export function dropdown(idButton) {
       for (const x of Array(2).keys()) {
         closeEverything(x + 1)
       }
+    } else {
+      closeEverything(0)
     }
     dropdownContent.classList.toggle("menu-open");
     dropdownBtn.setAttribute(

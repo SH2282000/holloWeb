@@ -61,9 +61,19 @@ h1 {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 
-.hand {
+.hand{
   bottom: 0;
   height: 13vh;
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
 }
 
 .logo.vanilla:hover {

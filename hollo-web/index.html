@@ -6,42 +6,53 @@
 	<title>My first three.js app</title>
 	<link rel="stylesheet" href="src/style.css">
 	<link rel="stylesheet" href="src/dropdown.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Jost:wght@100;200;600&family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<img class="logo" src="logo_black.png">
-	<div class="dropdown">
-		<button class="dropdown-btn" id="dropdown-btn0" aria-label="menu button" aria-haspopup="menu" aria-expanded="false"
-			aria-controls="dropdown-menu">
-			<span>Objets</span>
-			<span class="arrow" id="arrow0"></span>
-		</button>
-		<ul class="dropdown-content" id="dropdown-content0" role="menu" id="dropdown-menu">
-			<li style="--delay: 1;">
-				<button class="dropdown-btn" id="dropdown-btn1" aria-label="menu button" aria-haspopup="menu" aria-expanded="false"
-					aria-controls="dropdown-menu">
-					<span>Sous-Objets</span>
-					<span class="arrow" id="arrow1"></span>
-				</button>
-				<ul class="sub-dropdown-content" id="dropdown-content1">
-					<li style="--delay: 1;"><a>Modèle 1</a></li>
-					<li style="--delay: 2;"><a>Modèle 2</a></li>
-				</ul>
-			</li>
-			<li style="--delay: 2;">
-				<button class="dropdown-btn" id="dropdown-btn2" aria-label="menu button" aria-haspopup="menu" aria-expanded="false"
-					aria-controls="dropdown-menu">
-					<span>Sous-Objets</span>
-					<span class="arrow" id="arrow2"></span>
-				</button>
-				<ul class="sub-dropdown-content" id="dropdown-content2">
-					<li style="--delay: 1;"><a>Modèle 1</a></li>
-					<li style="--delay: 2;"><a>Modèle 2</a></li>
-				</ul>
-			</li>
-		</ul>
+	<div id="view0" class="view">
+		<img class="logo" src="logo_white.png">
+		<img class="hand" id="hand" src="hand.png">
+		<h2 class="welcome">
+			Posez votre main sur l'écran.
+		</h2>
 	</div>
-
+	<div id="view1" class="view">
+		<img class="logo" src="logo_black.png">
+		<div class="dropdown">
+			<button class="dropdown-btn" id="dropdown-btn0" aria-label="menu button" aria-haspopup="menu"
+				aria-expanded="false" aria-controls="dropdown-menu">
+				<span>Objets</span>
+				<span class="arrow" id="arrow0"></span>
+			</button>
+			<ul class="dropdown-content" id="dropdown-content0" role="menu" id="dropdown-menu">
+				<li style="--delay: 1;">
+					<button class="dropdown-btn" id="dropdown-btn1" aria-label="menu button" aria-haspopup="menu"
+						aria-expanded="false" aria-controls="dropdown-menu">
+						<span>Sous-Objets</span>
+						<span class="arrow" id="arrow1"></span>
+					</button>
+					<ul class="sub-dropdown-content" id="dropdown-content1">
+						<li style="--delay: 1;"><a>Modèle 1</a></li>
+						<li style="--delay: 2;"><a>Modèle 2</a></li>
+					</ul>
+				</li>
+				<li style="--delay: 2;">
+					<button class="dropdown-btn" id="dropdown-btn2" aria-label="menu button" aria-haspopup="menu"
+						aria-expanded="false" aria-controls="dropdown-menu">
+						<span>Sous-Objets</span>
+						<span class="arrow" id="arrow2"></span>
+					</button>
+					<ul class="sub-dropdown-content" id="dropdown-content2">
+						<li style="--delay: 1;"><a>Modèle 1</a></li>
+						<li style="--delay: 2;"><a>Modèle 2</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
 	<script type="module" src="main.js"></script>
 </body>
 

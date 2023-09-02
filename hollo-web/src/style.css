@@ -39,14 +39,31 @@ h1 {
   line-height: 1.1;
 }
 
-.logo {
+.welcome {
+  padding: 10%;
+  font-size: 4vh;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  color: white;
+  font-family: 'Bungee Outline', cursive;
+  text-shadow: white 2px 3px 17px;
+}
+
+.logo, .hand {
   position: absolute;
   top: 3vh;
   left: 0;
   right: 0;
   margin: auto;
-  height: 60px;
+  height: 3vh;
   filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.hand {
+  bottom: 0;
+  height: 13vh;
 }
 
 .logo.vanilla:hover {
@@ -61,6 +78,22 @@ h1 {
   color: #888;
 }
 
+.view {
+  display: none;
+}
+
+.view.active {
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
 
 @media (prefers-color-scheme: light) {
   :root {

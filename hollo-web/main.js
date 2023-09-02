@@ -5,15 +5,16 @@ import { loadObj } from './src/objLoader.js';
 import { createSphere } from './src/sphere.js';
 import { addStars } from './src/stars.js';
 import { handBtnPress } from './src/multiView.js';
+import { btnVideosPress } from './src/video.js';
 
 
 
-let cube, renderer, scene, camera, controls, glasses;
+let renderer, scene, camera, controls, glasses, speed = 0.1;
 
 init();
 loadObjects();
 loadMenu()
-handBtnPress()
+btnVideosPress()
 animate();
 
 function init() {
@@ -22,8 +23,8 @@ function init() {
     window.addEventListener('resize', onWindowResize)
 
     scene = new THREE.Scene();
-    scene.add(new THREE.AxesHelper(5))
-    scene.background = new THREE.Color( 0x00000 );
+    // scene.add(new THREE.AxesHelper(5))
+    scene.background = new THREE.Color( 0xffffff );
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     renderer = new THREE.WebGLRenderer( { antialias: true } );
@@ -32,6 +33,9 @@ function init() {
     const canvasContainer = document.getElementById('view0');
     canvasContainer.appendChild( renderer.domElement );
 
+    handBtnPress(speed, (newSpeed) => {
+        speed = newSpeed
+    })
 
     // Add lights
     const pointLight = new THREE.PointLight(0xffffff);
@@ -42,12 +46,6 @@ function init() {
 
     // Add elements
     addStars(1000, camera.position.z, scene)
-
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    cube = new THREE.Mesh(geometry, material);
-    const offset = new THREE.Vector3(0, 0, 0)
-    scene.add(createSphere(cube, offset));
 
     camera.position.z = 15;
     controls = new OrbitControls( camera, renderer.domElement );
@@ -74,9 +72,7 @@ function animate() {
 	glasses.rotation.x += 0.01;
 	glasses.rotation.y += 0.01;
 
-    scene.background += new THREE.Color( 0x00000 +1);
-
-    camera.position.z -= 0.1;
+    camera.position.z -= speed;
     addStars(1, camera.position.z, scene)
 
 	renderer.render( scene, camera );

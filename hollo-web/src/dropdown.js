@@ -1,3 +1,5 @@
+import { changeVideo } from "./video";
+
 export function dropdown(idButton, numOfButtons) {
   const dropdownBtn = document.getElementById(`dropdown-btn${idButton}`);
   const dropdownCaret = document.getElementById(`arrow${idButton}`);
@@ -7,6 +9,7 @@ export function dropdown(idButton, numOfButtons) {
   dropdownBtn.addEventListener("click", () => {
     dropdownCaret.classList.toggle("arrow-rotate");
     if (idButton == 0) {
+      changeVideo("ironman")
       for (const x of Array(numOfButtons - 1).keys()) {
         closeEverything(x + 1)
       }

@@ -3,34 +3,49 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { dropdown } from './src/dropdown.js';
 import { loadObj } from './src/objLoader.js';
 import { createSphere } from './src/sphere.js';
+import { addStars } from './src/stars.js';
+import { handBtnPress } from './src/multiView.js';
+import { btnVideosPress } from './src/video.js';
 
 
-let cube, renderer, scene, camera, controls, glasses;
+
+let renderer, scene, camera, controls, glasses, speed = 0.1;
 
 init();
 loadObjects();
 loadMenu()
+btnVideosPress()
 animate();
 
 function init() {
+    // Loading Scene
     document.addEventListener('contextmenu', event => event.preventDefault());
     window.addEventListener('resize', onWindowResize)
 
     scene = new THREE.Scene();
-    scene.add(new THREE.AxesHelper(5))
+    // scene.add(new THREE.AxesHelper(5))
     scene.background = new THREE.Color( 0xffffff );
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
 
     renderer = new THREE.WebGLRenderer( { antialias: true } );
     renderer.setPixelRatio( window.devicePixelRatio );
     renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( renderer.domElement );
+    const canvasContainer = document.getElementById('view0');
+    canvasContainer.appendChild( renderer.domElement );
 
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-    cube = new THREE.Mesh(geometry, material);
-    const offset = new THREE.Vector3(0, 0, 0)
-    scene.add(createSphere(cube, offset));
+    handBtnPress(speed, (newSpeed) => {
+        speed = newSpeed
+    })
+
+    // Add lights
+    const pointLight = new THREE.PointLight(0xffffff);
+    pointLight.position.set(10, 10, 10);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff);
+    scene.add(pointLight, ambientLight);
+
+    // Add elements
+    addStars(1000, camera.position.z, scene)
 
     camera.position.z = 15;
     controls = new OrbitControls( camera, renderer.domElement );
@@ -57,12 +72,10 @@ function animate() {
 	glasses.rotation.x += 0.01;
 	glasses.rotation.y += 0.01;
 
-	renderer.render( scene, camera );
-}
+    camera.position.z -= speed;
+    addStars(1, camera.position.z, scene)
 
-function onButtonClick(index){
-    console.log(`Button ${index + 1} clicked!`);
-    cube.material.color.set( Math.random() * 0xffffff );
+	renderer.render( scene, camera );
 }
 
 function onWindowResize() {
@@ -72,11 +85,8 @@ function onWindowResize() {
 }
 
 function loadMenu() {
-    dropdown()
-    const buttons = document.querySelectorAll('#button0, #button1, #button2, #button3');
-    buttons.forEach((button, index) => {
-        button.addEventListener('click', function() {
-            onButtonClick(index)
-        }, false)
-    });
+    const numOfButtons = 8
+    for (const x of Array(numOfButtons).keys()) {
+        dropdown(x, numOfButtons)
+    }
 }

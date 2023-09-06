@@ -27,6 +27,16 @@ function showView(viewId) {
     }
 }
 
+function destroyView(viewId) {
+    const viewToDestroy = document.getElementById(viewId);
+
+    var child = viewToDestroy.lastElementChild;
+    while (child) {
+        viewToDestroy.removeChild(child);
+        child = viewToDestroy.lastElementChild;
+    }
+}
+
 export function handBtnPress(speed, speedUpdater) {
     const handBtn = document.getElementById(`hand`);
 
@@ -40,6 +50,7 @@ export function handBtnPress(speed, speedUpdater) {
     // add click event to hand button
     handBtn.addEventListener("touchend", () => {
         showView('view1');
+        destroyView('view0')
     })
 }
 

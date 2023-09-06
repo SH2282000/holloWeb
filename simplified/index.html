@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>My first three.js app</title>
+	<link rel="stylesheet" href="src/style.css">
+	<link rel="stylesheet" href="src/dropdown.css">
+	<link rel="stylesheet" href="src/contact.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Jost:wght@100;200;600&family=Roboto:wght@100;300;400&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<a href="/">
+		<img class="logo" src="logo_black.png">
+	</a>
+	<video id="video" autoplay loop muted>
+		<source id="source" src="video/chaussures3.mp4" type="video/mp4" />
+	</video>
+	<button id="contact-btn">
+		<span>CONTACT</span>
+		<span class="arrow" id="arrow-contact"></span>
+	</button>
+	<div id="contact-window">
+		<h2 class="contact-details">SCANNEZ-MOI !</h2>
+		<h3 class="contact-details">INSTAGRAM</h3>
+		<img class="qrcode" src="scan.png"></img>
+	</div>
+	<div class="dropdown">
+		<button class="dropdown-btn" id="dropdown-btn0" aria-label="menu button" aria-haspopup="menu"
+			aria-expanded="false" aria-controls="dropdown-menu">
+			<span>Menu</span>
+			<span class="arrow" id="arrow0"></span>
+		</button>
+		<ul class="dropdown-content" id="dropdown-content0" role="menu" id="dropdown-menu">
+			<li style="--delay: 1;">
+				<button class="dropdown-btn" id="dropdown-btn1" aria-label="menu button" aria-haspopup="menu"
+					aria-expanded="false" aria-controls="dropdown-menu">
+					<span>Vehicules</span>
+					<span class="arrow" id="arrow1"></span>
+				</button>
+				<ul class="sub-dropdown-content" id="dropdown-content1">
+					<li style="--delay: 1;"><a class="sub-btn" id="moteur">Moteurs</a></li>
+					<li style="--delay: 2;"><a class="sub-btn" id="jante">Jante</a></li>
+					<li style="--delay: 3;"><a class="sub-btn" id="compteur1">Compteur</a></li>
+					<li style="--delay: 4;"><a class="sub-btn" id="compteur0">Tableaux de bord</a></li>
+				</ul>
+			</li>
+			<li style="--delay: 2;">
+				<button class="dropdown-btn" id="dropdown-btn2" aria-label="menu button" aria-haspopup="menu"
+					aria-expanded="false" aria-controls="dropdown-menu">
+					<span>Bagues</span>
+					<span class="arrow" id="arrow2"></span>
+				</button>
+				<ul class="sub-dropdown-content" id="dropdown-content2">
+					<li style="--delay: 1;"><a class="sub-btn" id="bague0">Bague diamant</a></li>
+					<li style="--delay: 2;"><a class="sub-btn" id="bague1">Autres Bagues</a></li>
+				</ul>
+			</li>
+			<li style="--delay: 3;">
+				<button class="dropdown-btn" id="dropdown-btn3" aria-label="menu button" aria-haspopup="menu"
+					aria-expanded="false" aria-controls="dropdown-menu">
+					<span>Logos</span>
+					<span class="arrow" id="arrow3"></span>
+				</button>
+				<ul class="sub-dropdown-content" id="dropdown-content3">
+					<li style="--delay: 1;"><a class="sub-btn" id="logo0">Nike</a></li>
+					<li style="--delay: 2;"><a class="sub-btn" id="logo1">Wonder Woman</a></li>
+					<li style="--delay: 3;"><a class="sub-btn" id="logo2">McDo</a></li>
+					<li style="--delay: 4;"><a class="sub-btn" id="logo3">Coca-Cola</a></li>
+				</ul>
+			</li>
+			<li style="--delay: 4;">
+				<button class="dropdown-btn" id="dropdown-btn4" aria-label="menu button" aria-haspopup="menu"
+					aria-expanded="false" aria-controls="dropdown-menu">
+					<span>Chaussures</span>
+					<span class="arrow" id="arrow4"></span>
+				</button>
+				<ul class="sub-dropdown-content" id="dropdown-content4">
+					<li style="--delay: 1;"><a class="sub-btn" id="chaussures0">Chaussures 0</a></li>
+					<li style="--delay: 2;"><a class="sub-btn" id="chaussures1">Chaussures 1</a></li>
+					<li style="--delay: 3;"><a class="sub-btn" id="chaussures2">Chaussures 2</a></li>
+					<li style="--delay: 4;"><a class="sub-btn" id="chaussures3">Chaussures 3</a></li>
+					<li style="--delay: 5;"><a class="sub-btn" id="chaussures4">Chaussures 4</a></li>
+					<li style="--delay: 6;"><a class="sub-btn" id="chaussures5">Chaussures 5</a></li>
+					<li style="--delay: 7;"><a class="sub-btn" id="chaussures6">Chaussures 6</a></li>
+				</ul>
+			</li>
+			<li style="--delay: 5;">
+				<button class="dropdown-btn" id="dropdown-btn5" aria-label="menu button" aria-haspopup="menu"
+					aria-expanded="false" aria-controls="dropdown-menu">
+					<span>Futuriste</span>
+					<span class="arrow" id="arrow5"></span>
+				</button>
+				<ul class="sub-dropdown-content" id="dropdown-content5">
+					<li style="--delay: 1;"><a class="sub-btn" id="ironman">Iron-Man</a></li>
+					<li style="--delay: 2;"><a class="sub-btn" id="deepfake">Deep Fake</a></li>
+				</ul>
+			</li>
+			<li style="--delay: 6;">
+				<button class="dropdown-btn" id="dropdown-btn6" aria-label="menu button" aria-haspopup="menu"
+					aria-expanded="false" aria-controls="dropdown-menu">
+					<span>Accessoires</span>
+					<span class="arrow" id="arrow6"></span>
+				</button>
+				<ul class="sub-dropdown-content" id="dropdown-content6">
+					<li style="--delay: 1;"><a class="sub-btn" id="lunettes">Lunettes</a></li>
+					<li style="--delay: 2;"><a class="sub-btn" id="sac">Sac</a></li>
+					<li style="--delay: 3;"><a class="sub-btn" id="montre0">Montre 1</a></li>
+					<li style="--delay: 4;"><a class="sub-btn" id="montre1">Montre 2</a></li>
+				</ul>
+			</li>
+			<li style="--delay: 7;">
+				<button class="dropdown-btn" id="dropdown-btn7" aria-label="menu button" aria-haspopup="menu"
+					aria-expanded="false" aria-controls="dropdown-menu">
+					<span>Immobilier</span>
+					<span class="arrow" id="arrow7"></span>
+				</button>
+				<ul class="sub-dropdown-content" id="dropdown-content7">
+					<li style="--delay: 1;"><a class="sub-btn" id="immobilier">Architecture</a></li>
+					<li style="--delay: 2;"><a class="sub-btn" id="robinet">Robinet</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<script type="module" src="main.js"></script>
+</body>
+
+</html>

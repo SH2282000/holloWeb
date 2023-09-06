@@ -1,0 +1,115 @@
+:root {
+    --cod-gray-50: #f6f6f6;
+    --cod-gray-100: #e7e7e7;
+    --cod-gray-200: #d1d1d1;
+    --cod-gray-300: #b0b0b0;
+    --cod-gray-400: #888888;
+    --cod-gray-500: #6d6d6d;
+    --cod-gray-600: #5d5d5d;
+    --cod-gray-700: #4f4f4f;
+    --cod-gray-800: #454545;
+    --cod-gray-900: #3d3d3d;
+    --cod-gray-950: #121212;
+}
+
+/* Dropdown styles */
+.menu-dropdown {
+    display: flex;
+    flex-direction: column;
+    max-width: 20ch;
+    margin: 80px auto 0;
+    position: absolute;
+    width: 100%;
+}
+
+.dropdown {
+    top: 5%;
+    max-width: 30%;
+    margin: 80px auto 0;
+    position: fixed;
+    width: 100%;
+}
+
+.dropdown-btn {
+    background: none;
+    color: var(--cod-gray-500);
+    font-size: 1.5vh;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.7em 1em;
+    cursor: pointer;
+    border: none;
+}
+
+.arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 9px solid var(--cod-gray-800);
+    border-radius: 1px;
+    transition: transform ease-in-out 0.3s;
+}
+
+.dropdown-content,
+.sub-dropdown-content {
+    list-style: none;
+    width: 100%;
+    position: absolute;
+    visibility: hidden;
+}
+
+.sub-dropdown-content {
+    font-size: 1.5vh;
+    font-family: 'Roboto', sans-serif;
+    top: 0;
+}
+
+.dropdown-content .dropdown-btn,
+.sub-dropdown-content li {
+    border-radius: 0em 0.5em 0.5em 0em;
+    position: relative;
+    right: 100%;
+    transition: 0.5s;
+    transition-delay: calc(60ms * var(--delay));
+}
+
+.sub-dropdown-content li {
+    margin: 1vh 0;
+}
+
+.dropdown-content.menu-open .dropdown-btn,
+.sub-dropdown-content.menu-open li {
+    right: 0;
+}
+
+.dropdown-content.menu-open,
+.sub-dropdown-content.menu-open {
+    visibility: visible;
+}
+
+.arrow.arrow-rotate {
+    transform: rotate(180deg);
+}
+
+.dropdown-content .dropdown-btn:hover {
+    color: #121212;
+}
+
+.dropdown-content .dropdown-btn button,
+.sub-dropdown-content li a {
+    font-weight: 100;
+    padding: 0.8em 1.5em;
+    color: var(--cod-gray-800);
+    margin: 0.5em 0;
+    text-decoration: none;
+}
+
+/* base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

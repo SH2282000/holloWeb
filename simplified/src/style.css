@@ -39,22 +39,6 @@ h1 {
   line-height: 1.1;
 }
 
-.contact {
-  font-size: 3vh;
-  font-weight: 100;
-  font-family: 'Roboto', sans-serif;
-  position: absolute;
-  letter-spacing: .1em;
-  padding: 0;
-  margin: auto;
-  left: 0;
-  right: 0;
-  bottom: 3vh;
-  text-align: center;
-  color: black;
-  text-decoration: none;
-}
-
 #welcome0 {
   visibility: hidden;
 }

@@ -1,3 +1,4 @@
+import { windowContactAction } from './src/contact.js';
 import { dropdown } from './src/dropdown.js';
 import { btnVideosPress } from './src/video.js';
 
@@ -13,6 +14,7 @@ function init() {
     document.addEventListener('contextmenu', event => event.preventDefault());
     loadMenu()
     btnVideosPress()
+    windowContactAction()
 }
 
 function loadMenu() {

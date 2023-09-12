@@ -9,7 +9,7 @@ export function dropdown(idButton, numOfButtons) {
   dropdownBtn.addEventListener("click", () => {
     dropdownCaret.classList.toggle("arrow-rotate");
     if (idButton == 0) {
-      changeVideo("chaussures3")
+      changeVideo("menu")
       for (const x of Array(numOfButtons - 1).keys()) {
         closeEverything(x + 1)
       }

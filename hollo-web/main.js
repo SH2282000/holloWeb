@@ -21,6 +21,7 @@ function init() {
     // Loading Scene
     document.addEventListener('contextmenu', event => event.preventDefault());
     window.addEventListener('resize', onWindowResize)
+    window.addEventListener("touchstart", touchHandler, false);
 
     scene = new THREE.Scene();
     // scene.add(new THREE.AxesHelper(5))
@@ -88,5 +89,11 @@ function loadMenu() {
     const numOfButtons = 8
     for (const x of Array(numOfButtons).keys()) {
         dropdown(x, numOfButtons)
+    }
+}
+
+function touchHandler(event){
+    if(event.touches.length > 1){
+        event.preventDefault()
     }
 }
